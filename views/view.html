@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Views</title>
+   </head>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+   <script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+   
+   <ul id="chat-messages"><li>list</li></ul>
+
+   <script>
+    let socket = io.connect("http://localhost:3000")
+    socket.on('proj1', function(message) {
+        $('#chat-messages').append($('<li>').text(message));
+    });
+    </script>
+</html>

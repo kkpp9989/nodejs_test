@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Hello world</title>
+   </head>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+   <script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+   <ul>
+    <li><a href="view">Views</a></li>
+    <li><a href="javascript:send1();">Send</a></li>
+   </ul>
+   <script>
+    function send1(){
+        const d = new Date();
+        let time = d.getTime();
+
+        let socket = io.connect("http://localhost:3000")
+        socket.emit('proj1', 'Send Time: '+time);
+
+    }
+   </script>
+   <body>Hello Socket.io</body>
+</html>
